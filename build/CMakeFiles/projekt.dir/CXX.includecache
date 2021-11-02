@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/paro/Pulpit/zadaniaPiatek/HSV.cpp
+HSV.hpp
+/home/paro/Pulpit/zadaniaPiatek/HSV.hpp
+
+/home/paro/Pulpit/zadaniaPiatek/HSV.hpp
+RGB.hpp
+/home/paro/Pulpit/zadaniaPiatek/RGB.hpp
+iomanip
+-
+iostream
+-
+
+/home/paro/Pulpit/zadaniaPiatek/RGB.hpp
+

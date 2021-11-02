@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/projekt.dir/main.cpp.o CMakeFiles/projekt.dir/testClass.cpp.o CMakeFiles/projekt.dir/RGB.cpp.o CMakeFiles/projekt.dir/HSV.cpp.o -o projekt 

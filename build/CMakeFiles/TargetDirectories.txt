@@ -1,0 +1,3 @@
+/home/paro/Pulpit/zadaniaPiatek/build/CMakeFiles/rebuild_cache.dir
+/home/paro/Pulpit/zadaniaPiatek/build/CMakeFiles/edit_cache.dir
+/home/paro/Pulpit/zadaniaPiatek/build/CMakeFiles/projekt.dir
