@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/paro/Pulpit/zadaniaPiatek/HSV.cpp
-HSV.hpp
-/home/paro/Pulpit/zadaniaPiatek/HSV.hpp
-
 /home/paro/Pulpit/zadaniaPiatek/HSV.hpp
 RGB.hpp
 /home/paro/Pulpit/zadaniaPiatek/RGB.hpp
@@ -19,4 +15,12 @@ iostream
 -
 
 /home/paro/Pulpit/zadaniaPiatek/RGB.hpp
+
+/home/paro/Pulpit/zadaniaPiatek/testClass.cpp
+testClass.hpp
+/home/paro/Pulpit/zadaniaPiatek/testClass.hpp
+HSV.hpp
+/home/paro/Pulpit/zadaniaPiatek/HSV.hpp
+
+/home/paro/Pulpit/zadaniaPiatek/testClass.hpp
 

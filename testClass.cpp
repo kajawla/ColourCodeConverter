@@ -22,20 +22,37 @@ void Test::runTests()
     {
         std::cout<<"Test drugi przeszedł!\n";
     }
-    RGB codeTwo(225,225,225);
-    result=result.convertToHSV(codeTwo);
-    std::cout<<result.getCMax();
-    if(result.getH()==0 
-    && result.getS()==0 
-    && result.getV()-100<1 
-    && result.getRange()==250 
-    && result.getCMin()==0 
-    && result.getCMax()==250
+    std::cout<<"Trzeci test \n";
+    RGB codeTwo(255,255,255);
+    HSV resultTwo=resultTwo.convertToHSV(codeTwo);
+    
+    if(resultTwo.getH()==0 
+    && resultTwo.getS()==0 
+    && resultTwo.getV()-100<1 
     )
     {
         std::cout<<"Trzeci test działa!";
     }
-    std::cout<<"Testy dzialaja! \n";
+    std::cout<<"Test trzeci \n";
+    RGB codeThree(0,0,255);
+    HSV resultThree=resultThree.convertToHSV(codeThree);
+    if(abs(resultThree.getH()-240)<1
+    && abs(resultThree.getS()-100)<1 
+    && abs(resultThree.getV()-100)<1
+    )
+    {
+        std::cout<<"Czwarty test działa!\n";
+    }
+    std::cout<<"Test piąty \n";
+    RGB codeFour(128,128,0);
+    HSV resultFour=resultFour.convertToHSV(codeFour);
+   if(abs(resultFour.getH()-60<1
+    && abs(resultFour.getS()-100)<1 
+    && abs(resultFour.getV()-50)<1
+    ))
+    {
+        std::cout<<"Piąty test działa!\n";
+    }
 }
 
 Test* Test::getInstance()
