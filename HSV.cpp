@@ -2,10 +2,11 @@
 
 HSV HSV::convertToHSV(RGB code)
 {
+    
     cMin=calculateCMin(code);
     setCMax(calculateCMax(code));
     setRange(calculateRange());
-    HSV result(calculateH(code),calculateS(),calculateV(cMax));
+    HSV result(calculateH(code),calculateS(),calculateV());
     return result;
 }
 float HSV::getH()
@@ -38,7 +39,7 @@ float HSV::calculateBPrim(RGB code)
     return code.getB()/255.0*100;
 }
 
-float HSV::calculateV(float i)
+float HSV::calculateV()
 {   
     return cMax;
 }
@@ -62,17 +63,23 @@ float HSV::calculateH(RGB code)
     {
         return 0;
     }
-    if(cMax==bPrim)
+    if(abs(cMax-bPrim)<1)
     {
        return 60*(((rPrim-gPrim)/range)+4);
     }
-    if(cMax==gPrim)
-    {
+    if(abs(cMax-gPrim)<1)
+    {   
         return 60*(((bPrim-rPrim)/range)+2);
     }
-    if(cMax==rPrim)
+    if(abs(cMax-rPrim)<1)
     {
-        return 60*((int)((bPrim-rPrim)/range)%6);
+        float result=60*fmod(((gPrim-bPrim)/range),6);
+        if(result<0)
+        {
+            return 360+result;
+        }
+        else
+        return 60*fmod(((gPrim-bPrim)/range),6);
     }
     
 }

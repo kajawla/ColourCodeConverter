@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/paro/Pulpit/zadaniaPiatek/HSV.cpp" "/home/paro/Pulpit/zadaniaPiatek/build/CMakeFiles/projekt.dir/HSV.cpp.o"
   "/home/paro/Pulpit/zadaniaPiatek/RGB.cpp" "/home/paro/Pulpit/zadaniaPiatek/build/CMakeFiles/projekt.dir/RGB.cpp.o"
+  "/home/paro/Pulpit/zadaniaPiatek/converter.cpp" "/home/paro/Pulpit/zadaniaPiatek/build/CMakeFiles/projekt.dir/converter.cpp.o"
   "/home/paro/Pulpit/zadaniaPiatek/main.cpp" "/home/paro/Pulpit/zadaniaPiatek/build/CMakeFiles/projekt.dir/main.cpp.o"
   "/home/paro/Pulpit/zadaniaPiatek/testClass.cpp" "/home/paro/Pulpit/zadaniaPiatek/build/CMakeFiles/projekt.dir/testClass.cpp.o"
   )

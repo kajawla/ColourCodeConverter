@@ -196,6 +196,33 @@ RGB.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/projekt.dir/build.make CMakeFiles/projekt.dir/RGB.cpp.s
 .PHONY : RGB.cpp.s
 
+converter.o: converter.cpp.o
+
+.PHONY : converter.o
+
+# target to build an object file
+converter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/projekt.dir/build.make CMakeFiles/projekt.dir/converter.cpp.o
+.PHONY : converter.cpp.o
+
+converter.i: converter.cpp.i
+
+.PHONY : converter.i
+
+# target to preprocess a source file
+converter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/projekt.dir/build.make CMakeFiles/projekt.dir/converter.cpp.i
+.PHONY : converter.cpp.i
+
+converter.s: converter.cpp.s
+
+.PHONY : converter.s
+
+# target to generate assembly for a file
+converter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/projekt.dir/build.make CMakeFiles/projekt.dir/converter.cpp.s
+.PHONY : converter.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -265,6 +292,9 @@ help:
 	@echo "... RGB.o"
 	@echo "... RGB.i"
 	@echo "... RGB.s"
+	@echo "... converter.o"
+	@echo "... converter.i"
+	@echo "... converter.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -3,4 +3,4 @@ project(NaTddExercises CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 add_compile_options(-Wall -Wextra -pedantic )
-add_executable(projekt main.cpp testClass.cpp RGB.cpp HSV.cpp)
+add_executable(projekt main.cpp testClass.cpp RGB.cpp HSV.cpp converter.cpp)

@@ -8,11 +8,20 @@ CMakeFiles/projekt.dir/HSV.cpp.o
 CMakeFiles/projekt.dir/RGB.cpp.o
  /home/paro/Pulpit/zadaniaPiatek/RGB.cpp
  /home/paro/Pulpit/zadaniaPiatek/RGB.hpp
+CMakeFiles/projekt.dir/converter.cpp.o
+ /home/paro/Pulpit/zadaniaPiatek/HSV.hpp
+ /home/paro/Pulpit/zadaniaPiatek/RGB.hpp
+ /home/paro/Pulpit/zadaniaPiatek/converter.cpp
+ /home/paro/Pulpit/zadaniaPiatek/converter.hpp
 CMakeFiles/projekt.dir/main.cpp.o
+ /home/paro/Pulpit/zadaniaPiatek/HSV.hpp
+ /home/paro/Pulpit/zadaniaPiatek/RGB.hpp
+ /home/paro/Pulpit/zadaniaPiatek/converter.hpp
  /home/paro/Pulpit/zadaniaPiatek/main.cpp
  /home/paro/Pulpit/zadaniaPiatek/testClass.hpp
 CMakeFiles/projekt.dir/testClass.cpp.o
  /home/paro/Pulpit/zadaniaPiatek/HSV.hpp
  /home/paro/Pulpit/zadaniaPiatek/RGB.hpp
+ /home/paro/Pulpit/zadaniaPiatek/converter.hpp
  /home/paro/Pulpit/zadaniaPiatek/testClass.cpp
  /home/paro/Pulpit/zadaniaPiatek/testClass.hpp

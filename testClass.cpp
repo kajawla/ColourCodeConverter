@@ -1,11 +1,12 @@
 #include "testClass.hpp"
-#include "HSV.hpp"
+
 
 
 Test* Test::pointerToObject=nullptr;
 
 void Test::runTests()
 {
+    Converter converter;
     RGB code(0,0,0);
     HSV result = result.convertToHSV(code);
     if(result.getH()==0 
@@ -14,6 +15,8 @@ void Test::runTests()
     {
         std::cout<<"Test przeszedł!\n";
     }
+    else 
+        std::cout<<"Test nie przeszedł! \n";
     RGB codeOne(50,50,50);
     result=result.convertToHSV(codeOne);
     if(result.getH()==0 
@@ -22,6 +25,8 @@ void Test::runTests()
     {
         std::cout<<"Test drugi przeszedł!\n";
     }
+    else 
+        std::cout<<"Test drugi nie przeszedł! \n";
     std::cout<<"Trzeci test \n";
     RGB codeTwo(255,255,255);
     HSV resultTwo=resultTwo.convertToHSV(codeTwo);
@@ -31,8 +36,10 @@ void Test::runTests()
     && resultTwo.getV()-100<1 
     )
     {
-        std::cout<<"Trzeci test działa!";
+        std::cout<<"Trzeci test działa!\n";
     }
+    else 
+        std::cout<<"Test trzeci nie przeszedł! \n";
     std::cout<<"Test trzeci \n";
     RGB codeThree(0,0,255);
     HSV resultThree=resultThree.convertToHSV(codeThree);
@@ -43,16 +50,58 @@ void Test::runTests()
     {
         std::cout<<"Czwarty test działa!\n";
     }
+    else 
+        std::cout<<"Test czwartek nie przeszedł! \n";
     std::cout<<"Test piąty \n";
     RGB codeFour(128,128,0);
     HSV resultFour=resultFour.convertToHSV(codeFour);
-   if(abs(resultFour.getH()-60<1
+    if(abs(resultFour.getH()-60)<1
     && abs(resultFour.getS()-100)<1 
     && abs(resultFour.getV()-50)<1
-    ))
+    )
     {
         std::cout<<"Piąty test działa!\n";
     }
+    else 
+        std::cout<<"Test piąty nie przeszedł! \n";
+    
+    std::cout<<"Test szósty \n";
+    RGB codeFive(128,0,50);
+    HSV resultFive=resultFive.convertToHSV(codeFive);
+    if(abs(resultFive.getH()-337)<1
+    && abs(resultFive.getS()-100)<1 
+    && abs(resultFive.getV()-50)<1
+    )
+    {
+        std::cout<<"Szósty test działa!\n";
+    }
+    else 
+        std::cout<<"Test szósty nie przeszedł! \n";
+    std::cout<<"Test siódmy \n";
+    HSV codeSix(0,0,0);
+   
+    RGB resultSix=converter.convertToRGB(codeSix);
+    if(resultSix.getB()==0
+    && resultSix.getR()==0
+    && resultSix.getG()==0)
+    {
+        std::cout<<"Test siódmy przeszedł!\n";
+    }
+    else 
+        std::cout<<"Test siódmy nie przeszedł! \n";
+    std::cout<<"Test ósmy \n";
+    HSV codeSeven(130,20,20);
+    RGB resultSeven=converter.convertToRGB(codeSeven);
+    if(resultSeven.getR()==41
+    && resultSeven.getG()==51
+    && resultSeven.getB()==43)
+    {
+        std::cout<<"Test ósmy przechodzi! \n";
+    }
+    else 
+        std::cout<<"Test ósmy nie przeszedł! \n";
+
+    
 }
 
 Test* Test::getInstance()

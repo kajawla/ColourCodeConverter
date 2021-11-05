@@ -13,14 +13,22 @@ iomanip
 -
 iostream
 -
+cmath
+-
 
 /home/paro/Pulpit/zadaniaPiatek/RGB.hpp
+
+/home/paro/Pulpit/zadaniaPiatek/converter.hpp
+HSV.hpp
+/home/paro/Pulpit/zadaniaPiatek/HSV.hpp
+cmath
+-
 
 /home/paro/Pulpit/zadaniaPiatek/testClass.cpp
 testClass.hpp
 /home/paro/Pulpit/zadaniaPiatek/testClass.hpp
-HSV.hpp
-/home/paro/Pulpit/zadaniaPiatek/HSV.hpp
 
 /home/paro/Pulpit/zadaniaPiatek/testClass.hpp
+converter.hpp
+/home/paro/Pulpit/zadaniaPiatek/converter.hpp
 

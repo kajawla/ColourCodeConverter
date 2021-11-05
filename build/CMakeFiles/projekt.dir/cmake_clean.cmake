@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/projekt.dir/HSV.cpp.o"
   "CMakeFiles/projekt.dir/RGB.cpp.o"
+  "CMakeFiles/projekt.dir/converter.cpp.o"
   "CMakeFiles/projekt.dir/main.cpp.o"
   "CMakeFiles/projekt.dir/testClass.cpp.o"
   "projekt"
