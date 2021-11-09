@@ -1,14 +1,5 @@
 #include "HSV.hpp"
 
-HSV HSV::convertToHSV(RGB code)
-{
-    
-    cMin=calculateCMin(code);
-    setCMax(calculateCMax(code));
-    setRange(calculateRange());
-    HSV result(calculateH(code),calculateS(),calculateV());
-    return result;
-}
 float HSV::getH()
 {
     return h;

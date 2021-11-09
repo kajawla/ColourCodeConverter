@@ -1,15 +1,15 @@
 #include "converter.hpp"
 
-/*HSV Converter::convertToHSV(RGB code)
+HSV Converter::convertToHSV(RGB code)
 {
-    
-    result.setCMin(result.calculateCMin(code));
-    result.setCMax(result.calculateCMax(code));
-    result.setRange(result.calculateRange());
-    RGB result(result.calculateH(code),result.calculateS(),result.calculateV());
+    HSV resultR(0,0,0);
+    resultR.setCMin(resultR.calculateCMin(code));
+    resultR.setCMax(resultR.calculateCMax(code));
+    resultR.setRange(resultR.calculateRange());
+    HSV result(resultR.calculateH(code),resultR.calculateS(),resultR.calculateV());
     return result;
 }
-*/
+
 RGB Converter::convertToRGB(HSV code)
 {
     RGB result(0,0,0);
@@ -61,4 +61,22 @@ float Converter::calculateC(HSV code)
 float Converter::calculateX(HSV code, float c)
 {
     return c*(1-fabs(fmod((code.getH()/60),2)-1));
+}
+
+float Converter::calculateCMin(RGB code)
+{
+    if(code.getB()<code.getG())
+    {
+        if(code.getB()<code.getR() && code.getB()<code.getG())
+        {
+            
+            return calculateBPrim(code);
+        }
+    }
+    else if(code.getG()<code.getR() && code.getG()<code.getB())
+    {
+        return calculateGPrim(code);
+    }
+    else 
+    return calculateRPrim(code);
 }
