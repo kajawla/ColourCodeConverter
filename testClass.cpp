@@ -71,7 +71,8 @@ bool Test::checkIfGivenRGBNotZeroReturnsCorrectHSV()
     RGB code(120, 30, 40);
     HSV expected(353, 75, 47);
     
-    HSV result = converter.convertToHSV(code);
+    HSV result = converterRGB::convertToHSV(code);
+
     std::cout << result.getV();
     if (result == expected)
     {

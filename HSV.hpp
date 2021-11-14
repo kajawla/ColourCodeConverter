@@ -3,6 +3,7 @@
 #include <iostream>
 #include <cmath>
 
+#pragma once
 class HSV
 {
 private:
@@ -28,7 +29,7 @@ void setCMax (const float &x);
 void setCMin(const float& x);
 void setRange(const float& x);
 
-float calculateRange();
+float calculateRange(); 
 
 bool operator== (const HSV &code);
 

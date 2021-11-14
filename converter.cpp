@@ -116,7 +116,7 @@ float Converter::calculateH(RGB code, HSV codeTwo)
             return resultMultiplied / 100;
     }
 }
-RGB Converter::convertToRGB( code)
+RGB Converter::convertToRGB(HSV code)
 {
     RGB result(0, 0, 0);
     float c;

@@ -1,5 +1,5 @@
-#include "HSV.hpp"
 #include <cmath>
+#include "HSV.hpp"
 class Converter
 {
 private:
