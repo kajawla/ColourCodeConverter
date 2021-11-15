@@ -1,6 +1,6 @@
-#include "HSV.hpp"
+#include "converterRGB.hpp"
 
-using namespace converterRGB;
+namespace converterRGB {
 
     HSV convertToHSV(RGB code)
     {
@@ -103,8 +103,88 @@ using namespace converterRGB;
             return (code.getRange() / code.getCMax()) * 100.0;
     }
 
+    float calculateRPrim(RGB code)
+    {
+        return code.getR() / 255.0 * 100.0;
+    }
+
+    float calculateGPrim(RGB code)
+    {
+        return code.getG() / 255.0 * 100.0;
+    }
+
+    float calculateBPrim(RGB code)
+    {
+        return code.getB() / 255.0 * 100.0;
+    }
+
     /* float converterRGB::calculateRange()
      {
          return cMax - cMin;
      }
      */
+
+    HEX convertToHEX(RGB code)
+    {
+        std::string hexCode = "";
+        hexCode+=calculateCodePart(code.getR());
+        hexCode += calculateCodePart(code.getG());
+        hexCode += calculateCodePart(code.getB());
+        HEX result(hexCode);
+        return result;
+    }
+    
+    std::string calculateCodePart(int codePart)
+    {
+        int code = codePart;
+        std::string result = "";
+        if (code != 0)
+        {
+            while (code != 0)
+            {
+                switch (code % 16)
+                {
+                case 15:
+                    result += "F";
+                    code -= code % 16;
+                    code = code / 16;
+                    break;
+                case 14:
+                    result += "E";
+                    code -= code % 16;
+                    code = code / 16;
+                    break;
+                case 13:
+                    result += "D";
+                    code -= code % 16;
+                    code = code / 16;
+                    break;
+                case 12:
+                    result += "C";
+                    code -= code % 16;
+                    code = code / 16;
+                    break;
+                case 11:
+                    result += "B";
+                    code -= code % 16;
+                    code = code / 16;
+                    break;
+                case 10:
+                    result += "A";
+                    code -= code % 16;
+                    code = code / 16;
+                    break;
+                default:
+                    result = result + std::to_string(code % 16);
+                    code -= code % 16;
+                    code = code / 16;
+                }
+
+            }
+            std::reverse(result.begin(), result.end());
+            return result;
+        }
+           
+        return "00";
+    }
+}

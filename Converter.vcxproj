@@ -139,13 +139,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="converter.hpp" />
+    <ClInclude Include="converterHSV.hpp" />
+    <ClInclude Include="converterRGB.hpp" />
+    <ClInclude Include="HEX.hpp" />
     <ClInclude Include="HSV.hpp" />
     <ClInclude Include="RGB.hpp" />
     <ClInclude Include="testClass.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="converter.cpp" />
+    <ClCompile Include="converterHSV.cpp" />
+    <ClCompile Include="converterRGB.cpp" />
+    <ClCompile Include="HEX.cpp" />
     <ClCompile Include="HSV.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RGB.cpp" />

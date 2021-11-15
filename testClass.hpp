@@ -1,5 +1,5 @@
-#include "converter.hpp"
-#include"converternamespace.hpp"
+
+#pragma once
 class Test
 {
 public:
@@ -12,9 +12,14 @@ private:
     static Test *pointerToObject;
     bool checkIfGivenHSVThatIsZeroReturnsRGBZero();
     bool checkIfGivenHSVThatIsNotZeroReturnsRGBNotZero();
-    void checkIfGivenRGBZeroReturnZeroHex();
+    bool checkIfGivenRGBZeroReturnZeroHex();
     bool checkIfGivenRGBZeroReturnsHSVZero();
     bool checkIfGivenRGBMaxReturnsCorrectHSV();
     bool checkIfGivenHSVMaxReturnsCorretsRGB();
     bool checkIfGivenRGBNotZeroReturnsCorrectHSV();
+    bool checkIfGivenMaxRGBReturnsMaxHEX();
+    bool checkifGivenRGBReturnsCorrectHEX();
+    bool checkIfGivenHSVZeroReturnsZeroHEX();
+    bool checkIfGivenHSVMaxReturnCorrectHEX();
+    bool checkIfGivenHSVReturnsCorrectHEX();
 };
