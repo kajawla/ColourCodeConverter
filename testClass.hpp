@@ -22,4 +22,11 @@ private:
     bool checkIfGivenHSVZeroReturnsZeroHEX();
     bool checkIfGivenHSVMaxReturnCorrectHEX();
     bool checkIfGivenHSVReturnsCorrectHEX();
+    bool checkIfGivenHEXZeroReturnCorrectRGB();
+    bool checkIfGivenMaxHEXReturnsCorrectRGB();
+    bool checkIfGivenHEXReturnsCorrectRGB();
+    bool checkIfGivenZeroHEXReturnsCorrectHSV();
+    bool checkIfGivenHexReturnsCorrectHSV();
+    bool checkIfGivenMaxHEXReturnsCorrectHSV();
+    
 };

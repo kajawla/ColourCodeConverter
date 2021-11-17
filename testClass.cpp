@@ -1,17 +1,16 @@
 #include "testClass.hpp"
-#include "converterRGB.hpp"
-#include "converterHSV.hpp"
+#include "colorConverter.hpp"
 
 Test* Test::pointerToObject=nullptr;
 
 void Test::runTests()
 {
-    if(checkIfGivenHSVThatIsZeroReturnsRGBZero())
+    if (checkIfGivenHSVThatIsZeroReturnsRGBZero())
     {
-        std::cout<<"checkIfGivenHSVThatIsZeroReturnsRGBZero is PASSING\n";
+        std::cout << "checkIfGivenHSVThatIsZeroReturnsRGBZero is PASSING\n";
     }
-    else 
-        std::cout<<"checkIfGivenHSVThatIsZeroReturnsRGBZero is FAILING \n";
+    else
+        std::cout << "checkIfGivenHSVThatIsZeroReturnsRGBZero is FAILING \n";
 
     if (checkIfGivenRGBNotZeroReturnsCorrectHSV())
     {
@@ -26,7 +25,7 @@ void Test::runTests()
     }
     else
         std::cout << "checkIfGivenHSVThatIsNotZeroReturnsRGBNotZero is FAILING \n";
-    
+
     if (checkIfGivenHSVMaxReturnsCorretsRGB())
     {
         std::cout << "checkIfGivenHSVMaxReturnsCorretsRGB is PASSING \n";
@@ -54,7 +53,7 @@ void Test::runTests()
     }
     else
         std::cout << "checkIfGivenRGBZeroReturnZeroHex is FAILING \n";
-    
+
     if (checkIfGivenMaxRGBReturnsMaxHEX())
     {
         std::cout << "checkIfGivenMaxRGBReturnsMaxHEX is PASSING \n";
@@ -89,13 +88,127 @@ void Test::runTests()
     }
     else
         std::cout << "checkIfGivenHSVReturnsCorrectHEX is FAILING \n";
+
+    if (checkIfGivenHEXZeroReturnCorrectRGB())
+    {
+        std::cout << "checkIfGivenHEXZeroReturnCorrectRGB is PASSING \n";
+    }
+    else
+        std::cout << "checkIfGivenHEXZeroReturnCorrectRGB is FAILING \n";
+
+    if (checkIfGivenMaxHEXReturnsCorrectRGB())
+    {
+        std::cout << "checkIfGivenMaxHEXReturnsCorrectRGB is PASSING \n";
+    }
+    else
+        std::cout << "checkIfGivenMaxHEXReturnsCorrectRGB is FAILING \n";
+
+    if (checkIfGivenHEXReturnsCorrectRGB())
+    {
+        std::cout << "checkIfGivenHEXReturnsCorrectRGB is PASSING \n";
+    }
+    else
+        std::cout << "checkIfGivenHEXReturnsCorrectRGB is FAILING \n";
+
+    if (checkIfGivenZeroHEXReturnsCorrectHSV())
+    {
+        std::cout << "checkIfGivenZeroHEXReturnsCorrectHSV is PASSING \n";
+    }
+    else
+        std::cout << "checkIfGivenZeroHEXReturnsCorrectHSV is FAILING \n";
+
+    if (checkIfGivenHexReturnsCorrectHSV())
+    {
+        std::cout << "checkIfGivenHexReturnsCorrectHSV is PASSING \n";
+    }
+    else
+        std::cout << "checkIfGivenHexReturnsCorrectHSV is FAILING \n";
+
+    if (checkIfGivenMaxHEXReturnsCorrectHSV())
+    {
+        std::cout << "checkIfGivenMaxHEXReturnsCorrectHSV is PASSING \n";
+    }
+    else
+        std::cout << "checkIfGivenMaxHEXReturnsCorrectHSV is FAILING \n";
+}
+
+bool Test::checkIfGivenMaxHEXReturnsCorrectHSV()
+{
+    HSV expected(0, 0, 100);
+    HEX codeGiven("FFFFFF");
+    HSV result = colorConverter::convertToHSV(codeGiven);
+    if (expected == result)
+    {
+        return true;
+    }
+    return false;
+}
+bool Test::checkIfGivenHexReturnsCorrectHSV()
+{
+    HSV expected(96, 70, 45);
+    HEX codeGiven("437322");
+    HSV result = colorConverter::convertToHSV(codeGiven);
+    if (expected == result)
+    {
+        return true;
+    }
+    return false;
+}
+
+bool Test::checkIfGivenZeroHEXReturnsCorrectHSV()
+{
+    HSV expected(0, 0, 0);
+    HEX codeGiven("000000");
+    HSV result = colorConverter::convertToHSV(codeGiven);
+    if (expected == result)
+    {
+        return true;
+    }
+    return false;
+}
+
+bool Test::checkIfGivenHEXReturnsCorrectRGB()
+{
+    RGB expected(174, 23, 65);
+    HEX codeGiven("AE1741");
+    RGB result = colorConverter::convertToRGB(codeGiven);
+    if (expected == result)
+    {
+        return true;
+    }
+    return false;
+}
+
+bool Test::checkIfGivenMaxHEXReturnsCorrectRGB()
+{
+    RGB expected(255, 255, 255);
+    HEX codeGiven("FFFFFF");
+    RGB result = colorConverter::convertToRGB(codeGiven);
+    if (expected == result)
+    {
+        return true;
+    }
+    return false;
+}
+
+bool Test::checkIfGivenHEXZeroReturnCorrectRGB() 
+{
+    RGB expected(0, 0, 0);
+    HEX codeGiven("000000");
+    RGB result = colorConverter::convertToRGB(codeGiven);
+    if (expected == result)
+    {
+        return true;
+    }
+    return false;
+
 }
 
 bool Test::checkIfGivenHSVReturnsCorrectHEX()
 {
     HEX expeced("293652");
     HSV codeGiven(220, 50, 32);
-    HEX result = converterHSV::convertToHEX(codeGiven);
+    HEX result = colorConverter::convertToHEX(codeGiven);
     if (expeced == result)
     {
         return true;
@@ -107,7 +220,7 @@ bool Test::checkIfGivenHSVMaxReturnCorrectHEX()
 {
     HEX expeced("FF0000");
     HSV codeGiven(360, 100, 100);
-    HEX result = converterHSV::convertToHEX(codeGiven);
+    HEX result = colorConverter::convertToHEX(codeGiven);
     if (expeced == result)
     {
         return true;
@@ -119,7 +232,7 @@ bool Test::checkIfGivenHSVZeroReturnsZeroHEX()
 {
     HEX expeced("000000");
     HSV codeGiven(0, 0, 0);
-    HEX result = converterHSV::convertToHEX(codeGiven);
+    HEX result = colorConverter::convertToHEX(codeGiven);
     if (expeced == result)
     {
         return true;
@@ -131,7 +244,7 @@ bool Test::checkifGivenRGBReturnsCorrectHEX()
 {
     HEX expected("861741");
     RGB codeGiven(134, 23, 65);
-    HEX result = converterRGB::convertToHEX(codeGiven);
+    HEX result = colorConverter::convertToHEX(codeGiven);
     if (expected == result)
     {
         return true;
@@ -143,7 +256,7 @@ bool Test::checkIfGivenMaxRGBReturnsMaxHEX()
 {
     HEX expected("FFFFFF");
     RGB codeGiven(255, 255, 255);
-    HEX result = converterRGB::convertToHEX(codeGiven);
+    HEX result = colorConverter::convertToHEX(codeGiven);
     if (expected == result)
     {
         return true;
@@ -156,7 +269,7 @@ bool Test::checkIfGivenRGBZeroReturnZeroHex()
 {
     HEX expectedZeroHex("000000");
     RGB codeGiven(0, 0, 0);
-    HEX result = converterRGB::convertToHEX(codeGiven);
+    HEX result = colorConverter::convertToHEX(codeGiven);
 
     if (result == expectedZeroHex)
     {
@@ -171,9 +284,7 @@ bool Test::checkIfGivenRGBNotZeroReturnsCorrectHSV()
     RGB code(120, 30, 40);
     HSV expected(353, 75, 47);
     
-    HSV result = converterRGB::convertToHSV(code);
-
-    std::cout << result.getV();
+    HSV result = colorConverter::convertToHSV(code);
     if (result == expected)
     {
         return true;
@@ -187,7 +298,7 @@ bool Test::checkIfGivenHSVMaxReturnsCorretsRGB()
   
     HSV code(360, 100, 100);
     RGB expected(255, 0, 0);
-    RGB result = converterHSV::convertToRGB(code);
+    RGB result = colorConverter::convertToRGB(code);
     if (result == expected)
     {
         return true;
@@ -200,7 +311,7 @@ bool Test::checkIfGivenRGBMaxReturnsCorrectHSV()
 
     RGB code(255, 255, 255);
     HSV expected(0, 0, 100);
-    HSV result = converterRGB::convertToHSV(code);
+    HSV result = colorConverter::convertToHSV(code);
     if (result==expected)
     {
         return true;
@@ -213,7 +324,7 @@ bool Test::checkIfGivenRGBZeroReturnsHSVZero()
 
     RGB code(0, 0, 0);
     HSV expected(0, 0, 0);
-    HSV result = converterRGB::convertToHSV(code);
+    HSV result = colorConverter::convertToHSV(code);
     if (result==expected)
     {
         return true;
@@ -226,7 +337,7 @@ bool Test::checkIfGivenHSVThatIsZeroReturnsRGBZero()
 
     HSV code(0, 0, 0);
     RGB expected(0, 0, 0);
-    RGB result = converterHSV::convertToRGB(code);
+    RGB result = colorConverter::convertToRGB(code);
     if (result == expected)
     {
         return true;
@@ -240,7 +351,7 @@ bool Test::checkIfGivenHSVThatIsNotZeroReturnsRGBNotZero()
  
     HSV code(130, 20, 20);
     RGB expected(41, 51, 43);
-    RGB result = converterHSV::convertToRGB(code);
+    RGB result = colorConverter::convertToRGB(code);
     if (result == expected)
     {
         return true;
