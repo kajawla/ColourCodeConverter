@@ -1,67 +1,62 @@
 #include "colorConverter.hpp"
+#include <iostream>
 
 namespace colorConverter
 {
-	 HSV convertToHSV(const RGB &code)
+    HSV convertToHSV(const RGB &code)
     {
-        HSV result;
-        result.setCMin(calculateCMin(code));
-        result.setCMax(calculateCMax(code));
-        result.setRange(result.calculateRange());
-        result.setH(calculateH(code, result));
-        result.setS(round(calculateS(result)));
-        int vInt = result.getCMax() * 100;
-        result.setV(round(vInt / 100.0));
+        
+        const float cMax = calculateCMax(code);
+        const float cMin = calculateCMin(code);
+        const float range  =calculateRange(cMax,cMin);
+        const float h = calculateH(code, range, cMax);
+        const float s = round(calculateS(cMax, range));
+        int vInt = cMax * 100;
+        const float v = round(vInt / 100.0);
+        HSV result(h,s,v);
         return result;
     }
 
+    inline float calculateRange(float cMax, float cMin)
+    {
+        return cMax - cMin;
+    }
+    
     float calculateCMax(const RGB& code)
     {
-        if (code.getB() > code.getG())
+        if (code.getB() > code.getG() && code.getB() > code.getR())
         {
-            if (code.getB() > code.getR())
-            {
-                return calculateBPrim(code);
-            }
+            return calculateBPrim(code);
         }
         if (code.getG() > code.getR())
         {
-
             return calculateGPrim(code);
         }
-        else
-        {
-            return calculateRPrim(code);
-        }
+        return calculateRPrim(code);
     }
 
     float calculateCMin(const RGB& code)
     {
         if (code.getB() < code.getR() && code.getB() < code.getG())
         {
-
             return calculateBPrim(code);
-        
         }
-        else if (code.getG() < code.getR() && code.getG() < code.getB())
+        if (code.getG() < code.getR() && code.getG() < code.getB())
         {
             return calculateGPrim(code);
         }
-        else
-            return calculateRPrim(code);
+        return calculateRPrim(code);
     }
 
-    float calculateH(const RGB &code, const HSV &codeTwo)
+    float calculateH(const RGB &code, float range, float cMax)
     {
-        if (codeTwo.getRange() == 0)
+        if (range == 0)
         {
             return 0;
         }
         const float gPrim = calculateGPrim(code);
         const float bPrim = calculateBPrim(code);
         const float rPrim = calculateRPrim(code);
-        const float range = codeTwo.getRange();
-        const float cMax = codeTwo.getCMax();
         int resultMultiplied = 0;
         if (range == 0)
         {
@@ -92,9 +87,9 @@ namespace colorConverter
         }
     }
 
-    inline float calculateS(const HSV &code)
+    inline float calculateS(float cMax, float range)
     {
-        return code.getCMax()==0? 0: (code.getRange() / code.getCMax()) * 100.0;
+        return cMax==0? 0: (range / cMax) * 100.0;
     }
 
     inline float calculateRPrim(const RGB &code)
@@ -114,7 +109,6 @@ namespace colorConverter
 
     RGB convertToRGB(const HSV& code)
     {
-        RGB result;
         const float c = calculateC(code);
         const float x = calculateX(code, c);
         const float m = (code.getV() / 100) - c;
@@ -149,7 +143,6 @@ namespace colorConverter
             RGB result(round((c + m) * 255), round(m * 255), round((x + m) * 255));
             return result;
         }
-        return result;
     }
 
     inline float calculateC(const HSV& code)
@@ -207,11 +200,12 @@ namespace colorConverter
                         result += 15 * pow(16, i);
                         code.pop_back();
                         break;
-                 }
+                }
             }
         }
         return result;
     }
+
     HEX convertToHEX(const HSV &code)
     {
         std::string hexCode = "";
@@ -222,8 +216,6 @@ namespace colorConverter
         HEX result(hexCode);
         return result;
     }
-
-    
 
     HEX convertToHEX(const RGB &code)
     {

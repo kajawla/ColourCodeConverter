@@ -15,21 +15,6 @@ int RGB::getG() const
     return g;
 }
 
-void RGB::setR(int r_)
-{
-    r = r_;
-}
-
-void RGB::setG(int g_)
-{
-    r = g_;
-}
-
-void RGB::setB(int b_)
-{
-    r = b_;
-}
-
 bool RGB::operator== (const RGB& code)
 {
     /*return (r == code.getR()

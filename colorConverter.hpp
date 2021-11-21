@@ -9,11 +9,12 @@ namespace colorConverter
 	HSV convertToHSV(const RGB &code);
 	float calculateCMax(const RGB &code);
 	float calculateCMin(const RGB &code);
-	float calculateH(const RGB &code, const HSV &codeTwo);
-	float calculateS(const HSV &code);
+	float calculateH(const RGB &code, float range, float cMax);
+	float calculateS(float cMax, float range);
 	float calculateRPrim(const RGB &code);
 	float calculateGPrim(const RGB &code);
 	float calculateBPrim(const RGB& code);
+	float calculateRange(float cMax, float cMin);
 
 	HEX convertToHEX(const RGB& code);
 	int calculateRGBPart(std::string& code);
