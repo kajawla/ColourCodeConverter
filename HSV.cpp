@@ -1,17 +1,17 @@
 #include "HSV.hpp"
 
 
-double HSV::getH()
+double HSV::getH() const
 {
     return h;
 }
 
-double HSV::getS()
+double HSV::getS() const
 {
     return s;
 }
 
-double HSV::getV()
+double HSV::getV() const
 {
     return v;
 }
@@ -21,32 +21,47 @@ float HSV::calculateRange()
     return cMax-cMin;
 }
 
-void HSV::setCMax(const float& x)
+void HSV::setCMax(const float x)
 {
     cMax=x;
 }
 
-void HSV::setCMin(const float& x)
+void HSV::setCMin(const float x)
 { 
     cMin=x;
 }
 
-void HSV::setRange(const float& x)
+void HSV::setRange(const float x)
 {
     range=x;
 }
 
-float HSV::getRange()
+void HSV::setH(const double& x)
+{
+    h = x;
+}
+
+void HSV::setS(const double& x)
+{
+    s = x;
+}
+
+void HSV::setV(const double& x)
+{
+    v = x;
+}
+
+float HSV::getRange() const
 {
     return range;
 }
 
-float HSV::getCMax()
+float HSV::getCMax() const
 {
     return cMax;
 }
 
-const float HSV::getCMin()
+float HSV::getCMin() const
 {
     return cMin;
 }

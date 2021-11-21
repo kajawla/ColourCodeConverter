@@ -1,5 +1,8 @@
 #include "testClass.hpp"
 #include "colorConverter.hpp"
+#include "HEX.hpp"
+#include "HSV.hpp"
+#include "RGB.hpp"
 
 Test* Test::pointerToObject=nullptr;
 
@@ -10,98 +13,126 @@ void Test::runTests()
         std::cout << "checkIfGivenHSVThatIsZeroReturnsRGBZero is PASSING\n";
     }
     else
+    {
         std::cout << "checkIfGivenHSVThatIsZeroReturnsRGBZero is FAILING \n";
+    }
 
     if (checkIfGivenRGBNotZeroReturnsCorrectHSV())
     {
         std::cout << "checkIfGivenRGBNotZeroReturnsCorrectHSV is PASSING \n";
     }
     else
+    {
         std::cout << "checkIfGivenRGBNotZeroReturnsCorrectHSV is FALINING \n";
+    }
 
     if (checkIfGivenHSVThatIsNotZeroReturnsRGBNotZero())
     {
         std::cout << "checkIfGivenHSVThatIsNotZeroReturnsRGBNotZero is PASSING \n";
     }
     else
+    {
         std::cout << "checkIfGivenHSVThatIsNotZeroReturnsRGBNotZero is FAILING \n";
+    }
 
     if (checkIfGivenHSVMaxReturnsCorretsRGB())
     {
         std::cout << "checkIfGivenHSVMaxReturnsCorretsRGB is PASSING \n";
     }
     else
+    {
         std::cout << "checkIfGivenMaxHSVReturnsCorretsRGB is FAILING \n";
+    }
 
     if (checkIfGivenRGBZeroReturnsHSVZero())
     {
         std::cout << "checkIfGivenRGBZeroReturnsHSVZero is PASSING \n";
     }
     else
+    {
         std::cout << "checkIfGivenRGBZeroReturnsHSVZero is FALING \n";
+    }
 
     if (checkIfGivenRGBMaxReturnsCorrectHSV())
     {
         std::cout << "checkIfGivenRGBMaxReturnsCorrectHSV is PASING \n";
     }
     else
+    {
         std::cout << "checkIfGivenRGBMaxReturnsCorrectHSV is FAILING \n";
+    }
 
     if (checkIfGivenRGBZeroReturnZeroHex())
     {
         std::cout << "checkIfGivenRGBZeroReturnZeroHex is PASSING \n";
     }
     else
+    {
         std::cout << "checkIfGivenRGBZeroReturnZeroHex is FAILING \n";
+    }
 
     if (checkIfGivenMaxRGBReturnsMaxHEX())
     {
         std::cout << "checkIfGivenMaxRGBReturnsMaxHEX is PASSING \n";
     }
     else
+    {
         std::cout << "checkIfGivenMaxRGBReturnsMaxHEX is FAILING \n";
+    }
 
     if (checkifGivenRGBReturnsCorrectHEX())
     {
         std::cout << "checkifGivenRGBReturnsCorrectHex is PASSING \n";
     }
     else
+    {
         std::cout << "checkifGivenRGBReturnsCorrectHex is FALINING \n";
+    }
 
     if (checkIfGivenHSVZeroReturnsZeroHEX())
     {
         std::cout << "checkIfGivenHSVZeroReturnsZeroHEX is PASSING \n";
     }
     else
+    {
         std::cout << "checkIfGivenHSVZeroReturnsZeroHEX is FAILING \n";
+    }
 
     if (checkIfGivenHSVMaxReturnCorrectHEX())
     {
         std::cout << "checkIfGivenHSVMaxReturnCorrectHEX is PASSING \n";
     }
     else
+    {
         std::cout << "checkIfGivenHSVMaxReturnCorrectHEX is FAILING \n";
+    }
 
     if (checkIfGivenHSVReturnsCorrectHEX())
     {
         std::cout << "checkIfGivenHSVReturnsCorrectHEX is PASSING \n";
     }
     else
+    {
         std::cout << "checkIfGivenHSVReturnsCorrectHEX is FAILING \n";
+    }
 
     if (checkIfGivenHEXZeroReturnCorrectRGB())
     {
         std::cout << "checkIfGivenHEXZeroReturnCorrectRGB is PASSING \n";
     }
     else
+    {
         std::cout << "checkIfGivenHEXZeroReturnCorrectRGB is FAILING \n";
+    }
 
     if (checkIfGivenMaxHEXReturnsCorrectRGB())
     {
         std::cout << "checkIfGivenMaxHEXReturnsCorrectRGB is PASSING \n";
     }
     else
+    {
         std::cout << "checkIfGivenMaxHEXReturnsCorrectRGB is FAILING \n";
+    }
 
     if (checkIfGivenHEXReturnsCorrectRGB())
     {
@@ -143,6 +174,7 @@ bool Test::checkIfGivenMaxHEXReturnsCorrectHSV()
     }
     return false;
 }
+
 bool Test::checkIfGivenHexReturnsCorrectHSV()
 {
     HSV expected(96, 70, 45);
